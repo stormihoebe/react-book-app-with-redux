@@ -3,8 +3,14 @@ import {connect} from 'react-redux';
 
 class BookDetail extends Component{
   render(){
+    if(!this.props.book){
+      return <div>Select a book to get Started.</div>
+    }
     return (
-      <div>Book Detail!</div>
+      <div>
+        <h3> Details for: </h3>
+        <div>{this.props.book.title}</div>
+      </div>
     );
   }
 }
